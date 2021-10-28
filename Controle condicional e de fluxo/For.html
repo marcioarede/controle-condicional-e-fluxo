@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de usuário</title>
+</head>
+<body>
+<script>
+function enviarDados(){
+var nome = document.getElementById("nome").value;
+var idade = document.getElementById("idade").value;
+var peso = document.getElementById("peso").value;
+var altura = document.getElementById("altura").value;
+var sexo = document.getElementById("sexo").value;
+
+if(nome.length < 4 || nome.length > 30)
+            alert('Tamanho do nome inconsistente');
+            else{
+            if(idade < 18)
+            alert(nome +' Você é menor, não pode acessar o sistema');
+            else{
+            if(peso <= 0)
+            alert(nome +' seu peso deve ser preenchido e não pode ser zero ou menor');
+            else{
+            if(altura <= 0)
+            alert(nome +' seu peso deve ser preenchido e não pode ser zero ou menor');
+            else{
+            if(sexo != 'F' && sexo != 'M')
+            alert('Marque a opção em relação a seu Sexo!');
+            else
+            alert(nome +' Seu Cadastro foi realizado com sucesso\nNome: '+nome + '\nIdade: '+idade+ '\nPeso: '+peso + '\nAltura: '+altura + '\nSexo: '+sexo);
+                          }
+                     }
+                   }
+               }
+            }
+</script>
+<form method="POST" action="fichaJS.html" onsubmit="return enviarDados();">
+    <table>
+        <tr>
+            <td>Nome: </td>
+            <td><input type="text" name="nome" id="nome"></td>
+        </tr>
+        <tr>
+            <td>Idade: </td>
+            <td><input type="text" name="idade" id="idade"></td>
+        </tr>
+        <tr>
+            <td>Peso: </td>
+            <td><input type="text" name="peso" id="peso"></td>
+        </tr>
+        <tr>
+            <td>Altura: </td>
+            <td><input type="text" name="altura" id="altura"></td>
+        </tr>
+        <tr>
+            <td>Sexo:</td>
+            <td>
+                <select name="sexo" id="sexo">
+                    <option value="F">F</option>
+                    <option value="M">M</option>
+                    <option value="Gênero não binário">Gênero não binário</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Enviar Dados"></td>
+        </tr>
+    </table>
+</form>
+
+
+
+
+</body>
+
+</html>
